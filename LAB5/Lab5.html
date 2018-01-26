@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<head>
+    <link href = "css5.css" rel = "stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <title>Laboratorio POE</title>
+</head>
+
+<body>
+    <section>
+        <form onsubmit="password(this);">
+            Contraseña:<input type="password" placeholder="Ej. @ngel1898" name = "pass1" required/><br><br>
+            Confirmar Contraseña:<input type="password"  name = "pass2" required/><br><br>
+            <input type = "submit" value="Enviar">
+        </form>
+        <br><br><br><br><br>
+        <p id = "a1"></p>
+    </section>
+    
+    <section>
+        <form>
+            <table>
+            <tr>
+                <td></td>
+                <td>Computadore</td>
+                <td>Tenis deporte</td>
+                <td>Sudadera gorro</td>
+            </tr>
+            <tr>
+                <td>Precio</td>
+                <td>$25,000.00</td>
+                <td>$1,500.00</td>
+                <td>$800.00</td>
+            </tr>
+            <tr>
+                <td>Codigo</td>
+                <td>A01208033</td>
+                <td>A01700757</td>
+                <td>A01700733</td>
+            </tr>
+            <tr>
+                <td>En inventario</td>
+                <td id = "8033">4</td>
+                <td id = "0757">10</td>
+                <td id = "0733">20</td>
+            </tr>
+            <tr>
+                <td>Cantidad</td>
+                <td><select id= "cantidad" onchange="subTotal(1);" >
+                </select></td>
+                <td><select id= "cantidad1" onchange="subTotal(2);"> 
+                </select></td>
+                <td><select id= "cantidad2" onchange="subTotal(3);">   
+                </select></td>
+            </tr>
+            <tr>
+                <td>Subtotal</td>
+                <td id = "sub"> $0</td>
+                <td id = "sub"> $0</td>
+                <td id = "sub"> $0</td>
+            </tr>
+            
+            </table> 
+        </form>
+    </section>
+    
+    <section>
+                
+               <h2> Preguntas a responder </h2>
+                
+                <article>
+                    
+                    <h3 id ="1">
+                        ¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?
+                    </h3>
+                    
+                    <p>
+                        Asi el usuario puede saber inmediatamente si cometió algún error, además le evita al servidor lidiar con entradas incorrectas en el formulario.
+                    </p>
+                    
+                    <h3>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h3>
+                    <p>
+                        Desavilitando el JavaScript del navegador.
+                    </p>
+                    
+                    <h3>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h3>
+                    
+                    <p>
+                        Porque nos podemos ahorrar tiempo de espera a una respuesta HTTP, además se puede usar otros medios de seguridad aparte.
+                    </p>
+
+                </article>
+                
+            </section>
+            
+            <section>
+                
+                <h2>Referencias</h2>
+                
+                <a>Muñoz, I. (2017). Validación de formulario de datos. 25/01/2018, de MDN Sitio web:</a><a href=https://developer.mozilla.org/es/docs/Learn/HTML/Forms/Validacion_formulario_datos> https://developer.mozilla.org/es/docs/Learn/HTML/Forms/Validacion_formulario_datos
+				</a>
+                
+            </section>
+    
+    <script type = "text/javascript" src = "JS5.js"></script>
+</body>
