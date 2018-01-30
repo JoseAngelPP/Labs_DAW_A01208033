@@ -24,13 +24,15 @@
                 <td></td>
                 <td>Computadore</td>
                 <td>Tenis deporte</td>
-                <td>Sudadera gorro</td>
+                <td>Sudadera gorro</td><td></td>
+                <td>Total</td>
             </tr>
             <tr>
                 <td>Precio</td>
                 <td>$25,000.00</td>
                 <td>$1,500.00</td>
                 <td>$800.00</td>
+                <td>IVA aplicado en el precio total</td>
             </tr>
             <tr>
                 <td>Codigo</td>
@@ -42,26 +44,41 @@
                 <td>En inventario</td>
                 <td id = "8033">4</td>
                 <td id = "0757">10</td>
-                <td id = "0733">20</td>
+                <td id = "0733">15</td>
             </tr>
             <tr>
                 <td>Cantidad</td>
-                <td><select id= "cantidad" onchange="subTotal(1);" >
+                <td><select class= "cantidad" onchange="subTotal(0,1);" >
                 </select></td>
-                <td><select id= "cantidad1" onchange="subTotal(2);"> 
+                <td><select class= "cantidad" onchange="subTotal(1,2);"> 
                 </select></td>
-                <td><select id= "cantidad2" onchange="subTotal(3);">   
+                <td><select class= "cantidad" onchange="subTotal(2,3);"> 
                 </select></td>
             </tr>
             <tr>
                 <td>Subtotal</td>
-                <td id = "sub"> $0</td>
-                <td id = "sub"> $0</td>
-                <td id = "sub"> $0</td>
+                <td class = "sub"> $0</td>
+                <td class = "sub"> $0</td>
+                <td class = "sub"> $0</td>
+                <td>+ 16% IVA</td>
+                <td id = "total">$0</td>
             </tr>
             
             </table> 
         </form>
+        <input type="submit" value="Pagar" onclick="confirmarPago();">
+    </section>
+    <section>
+        <h3>SACAR EL AREA DE UN RECTANGULO</h3>
+
+        <form id = "problema" name ="e4">
+            <input type="number" placeholder="Lado 1" name="lad1" required>
+            <input type="number" placeholder="Lado 2" name="lad2" required>
+            <input type="text" placeholder="unidades" name="unidad">
+            <input type="submit" value="Calcular">
+        </form>
+
+        <p id = "resultado"></p>
     </section>
     
     <section>

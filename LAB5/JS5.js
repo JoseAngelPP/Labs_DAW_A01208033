@@ -14,8 +14,8 @@ function password(form)
     }
 }
 
-function inventario(ard, cantidad) {
-    var articulo = document.getElementById(ard);
+function inventario(index, cantidad) {
+    var articulo = document.getElementsByClassName("cantidad")[index];
     var i;
     var producto = document.getElementById(cantidad).innerText;
     for (i=0; i<=producto; i++){
@@ -25,16 +25,69 @@ function inventario(ard, cantidad) {
     }
 }
 
-inventario("cantidad", "8033");
-inventario("cantidad1", "0757");
-inventario("cantidad2", "0733");
+inventario(0, "8033");
+inventario(1, "0757");
+inventario(2, "0733");
 
 
-function subTotal(can)
+function subTotal(index,can)
 {
-    
+    var cantidad = document.getElementsByClassName("cantidad")[index].value;
+    var costo;
+    switch(can)
+        {
+            case 1:
+                costo = cantidad * 25000;
+                break;
+            case 2:
+                costo = cantidad * 1500;
+                break;
+            case 3:
+                costo = cantidad * 800;
+                break;
+        }
+    document.getElementsByClassName("sub")[index].innerHTML = "$" + costo;
+    calcularTotal(costo);
 }
 
 
 
 
+function calcularTotal(subtotal){
+    
+    var iva = subtotal * .16;
+    
+    document.getElementById("total").innerHTML = "$" + String(iva);
+    
+    var total = subtotal + iva;
+    
+    document.getElementById("total").innerHTML = "$" + String(total);
+}
+
+function confirmarPago(){
+    
+    var total = document.getElementById("total");
+    
+    alert("COMPRA FINALIZADA, SU PRODUCTO SERA ENTREGADO EN LAS PROXIMAS 24 HORAS");
+    
+}
+
+
+function calcular(L, LL)
+{
+    var res = Math.abs(L * LL);
+    
+    return res;
+}
+
+
+document.getElementById("problema").onsubmit = function() {
+    var L = document.e4.lad1.value;    
+    var LL = document.e4.lad1.value;
+    var units = document.e4.unidad.value;
+    
+    var result = calcular(L, LL);
+    
+    alert("El resultado es " + result + units);
+    document.getElementById("resultado").innerHTML = result;
+}
