@@ -23,3 +23,4 @@
       </div>
     </form>
   </div>
+<?php include("_footer.html"); ?>
