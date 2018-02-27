@@ -14,4 +14,4 @@ $nombre = $password = "";
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
-
+<?php include("_footer.html"); ?>
