@@ -1,0 +1,39 @@
+Ejercicio 2
+Revisa el contenido de la tabla materiales y determina si existe alguna inconsistencia en el contenido de la tabla. ¿Cuál es? ¿A qué se debe? 
+	Hay dos elementos en la tabla materiales con la misma clave, esto debido a que aún no existe una llave primaria para asegurar autenticidad.
+ALTER TABLE Materiales add constraint llaveMateriales PRIMARY KEY (Clave)  ¿Qué ocurrió? 
+      Se declaro a “Clave” como llave primaria de la tabla Materiales.
+
+sp_helpconstraint materiales ¿Qué información muestra esta consulta? 
+      Características de la tabla, como sus llaves primarias 
+
+¿Qué sentencias utilizaste para definir las llaves primarias? 
+  	ALTER TABLE NombreTabla add constraint NombreConstraint PRIMARY KEY (Columna) 
+
+¿Qué sentencias utilizaste para definir este constrait? 
+      Dentro del paréntesis separé por comas el nombre de las llaves.
+      ALTER TABLE NombreTabla add constraint NombreConstraint PRIMARY KEY (Columna1, Columna2, …, ColumnaN) 
+
+Ejercicio 3
+¿Qué particularidad observas en los valores para clave, RFC y numero? 
+      Que son inconsistentes, pues el nuevo registro tiene valores (0; xxx)que no se parecen a los de los registros anteriores. 
+¿Cómo responde el sistema a la inserción de este registro? 
+      Creando la tabla sin ningún error, pues no existe ninguna restricción para los registros. 
+ALTER TABLE entregan add constraint cfentreganclave 
+  foreign key (clave) references materiales(clave); ¿Qué significa el mensaje que emite el sistema? 
+      Que para poder generar un registro en “Entregan” se necesita de que el valor de la "Clave” sea una clave existente en la tabla “Materiales”.
+¿Qué significado tiene la sentencia anterior? 
+	Declarar como llave foránea a la llave “Clave”, proveniente de la tabla Materiales.
+sp_helpconstraint tableName¿Qué significan las columnas de esas consultas?
+	Son los constraints que tiene relacionado una tabla, en el caso de entregan son 4 constraints, uno de llave primaria y tres de llave foránea, cada uno tiene su nombre, su tipo y su llave de constraint.
+
+Ejercicio 4
+¿Qué uso se le está dando a GETDATE()? 
+      Dar la fecha actual o en que se realizó el registro. 
+¿Tiene sentido el valor del campo de cantidad? 
+      No, porque nunca se van a entregar cero cosas. 
+¿Cómo responde el sistema? 
+      Mostrando un mensaje de error, y evitando realizar el registro.
+¿Qué significa el mensaje? 
+ 	Que existe una restricción la cual no permite usar un “0” en cantidad, esto debido a que hay un constrint.
+Integridad referencial: Es la que permite que la declaración de llaves foráneas puedan ser validas, esto solo si existe la llave en la tabla que se está usando como referencia. 
