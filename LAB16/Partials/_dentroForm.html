@@ -1,0 +1,82 @@
+<br><br>
+
+<img src="<?=$_SESSION['ruta_archivo']?>" style = "float:left; width: 200px; height: 200px">
+Bienvenido <?php echo $_SESSION["nombre"] . " " . $_SESSION["apellido"];?> <br>
+  <form action="create.php" method="POST" enctype="multipart/form-data">
+      <div class="input-field col s12">
+          <?php if (isset($_SESSION["error_archivo"]) != ""): ?>
+            <div class="card-panel">
+              <span class="red-text text-darken-2"><?=$_SESSION["error_archivo"] ?></span>
+            </div>
+          <?php endif; ?>
+        </div>
+    
+    <div class="file-field input-field">
+      <div class="btn">
+        <span>Selecciona tu foto de perfil</span>
+        <input type="file" name="imagen">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" >
+      </div>
+    </div>
+    <div class="input-field col s6">
+          <input class="btn waves-effect waves-light" type="submit" value="Agregar">
+    </div>
+  </form>
+<?php getContactos()?>
+
+<form action="buscar.php" method="post">
+    Nombre:<input type="text" name="name"><br>
+    <input type="submit" value="Buscar">
+</form>
+<?php
+    if(isset($_POST["name"]))
+    {
+        echo "Contactos: ".$_POST["name"]. "<br>".$NombreContacto;
+    }
+?>
+<section>
+                
+    <h2> Preguntas a responder </h2>
+                
+        <article>             
+            <h3 id ="1">
+                ¿Por qué es una buena práctica separar el modelo del controlador?
+            </h3>
+                    
+            <p>
+                Una de las principales razones es para poder reutilizar el código, si haces un buen modelo y un buen controlador, esas partes de código se pueden pasar facilmente de programa en programa. 
+            </p>
+            
+            <h3 id ="1">
+                ¿Qué es SQL injection y cómo se puede prevenir?
+            </h3>
+                    
+            <p>
+                Es un ataque a la base de datos en donde un usuario obtiene acceso a la misma y modifica la estructura. Cuando meten código SQL para modificar de cualquier forma la base de datos. 
+                Tener solo un usuario que pueda modificar la estructura de la base de datos 
+            </p>
+
+        </article>
+    
+</section>
+
+<section>
+                
+    <h2>Referencias</h2>
+                
+    <strong> <a href="#1">[1]</a> </strong>
+        "URL." Internet:
+    <a href=http://idesweb.es/proyecto/proyecto-prac09-php-cookies-sesiones>
+        http://idesweb.es/proyecto/proyecto-prac09-php-cookies-sesiones
+    </a>, 22/03/2005 [Febrero 26, 2018]. <br>
+                
+</section>
+
+
+<br><br><br>
+
+<?php if(isset($_SESSION["nombre"])): ?>
+                <a class="btn waves-effect waves-light" href="logout.php" style = "float: right">Salir</a>
+<?php endif; ?>
