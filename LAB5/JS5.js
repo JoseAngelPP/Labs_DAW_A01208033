@@ -91,3 +91,59 @@ document.getElementById("problema").onsubmit = function() {
     alert("El resultado es " + result + units);
     document.getElementById("resultado").innerHTML = result;
 }
+
+
+
+function changeColor()
+{
+    var color = document.getElementById("header").style.color = "blue";
+}
+
+document.getElementById("header").addEventListener("mouseover", changeColor);
+
+
+document.getElementById("header").addEventListener("mouseover",showPopup);
+document.getElementById("header").addEventListener("mouseout",hidePopup);
+function showPopup(){
+    document.getElementById("popup").style.display = "block";
+}
+
+function hidePopup(){
+    document.getElementById("popup").style.display = "none";
+}
+
+document.getElementById("borrar").onclick = function (){
+    document.getElementById("tabla").style.visibility = "collapse";
+    document.getElementById("borrar").style.color = "red";
+    document.getElementById("pagar").style.visibility = "hidden";
+    
+}
+
+setInterval (function (){reloj()}, 1000) 
+function reloj ()
+{
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById("reloj").innerHTML = t;
+}
+
+function timeout ()
+{
+   setTimeout(function(){ alert("Espero te guste mi laboratorio"); }, 3000);
+}
+timeout();
+
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}

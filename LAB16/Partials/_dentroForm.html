@@ -30,6 +30,7 @@ Bienvenido <?php echo $_SESSION["nombre"] . " " . $_SESSION["apellido"];?> <br>
     Nombre:<input type="text" name="name"><br>
     <input type="submit" value="Buscar">
 </form>
+<a class="btn-floating btn-large waves-effect waves-light red" href="crear.php"><i class="material-icons">add</i></a>
 <?php
     if(isset($_POST["name"]))
     {

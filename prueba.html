@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+
+<html lang="es-mx">
+
+<head>
+
+<meta charset="utf-8"/>
+
+<meta name="description" content="Primer Laboratorio de DAW"/>
+    
+<link rel="stylesheet" type="text/css" href="../Lab01/css_Lab01.css">
+
+<script type = "text/javascript" src = "jsprueba.js"></script>
+
+
+<title> Laboratorio 04 DAW </title>
+
+</head>
+
+<body>
+    
+    <div id = "jsprueba">
+     
+        <header>
+		  <h1>Laboratorio 01 DAW </h1>
+	    </header>
+    
+        <main id = "contenido">
+            
+            <section>
+                <h2>JavaScript</h2>
+                
+                <article>
+                    Presiona el botón para ingresar un número y ver una tabla con sus cuadrados y cubos
+                    
+                    <button onclick="hacerTabla();">Presióname</button> 
+                    
+                    <br> 
+                    
+                    Presiona el botón para sumar dos números
+                    
+                    <button onclick="sumaDosNumeros()">Presióname</button>
+                    <br>
+                    
+                    Presiona el botón para la función contador()
+                    
+                    <button onclick="leerArreglo();">Presióname</button>
+                    
+                    <br>
+                    
+                    Presiona para generar un promedio
+                    
+                    <button onclick="leerArreglo();sacarPromedio();">Presióname</button>
+                    
+                    <br>
+                    
+                    Presiona para voltear un número
+                    
+                    <button onclick="inverso();">Presióname</button>
+                    
+                    
+                    <br>
+                    
+                    Presiona para obtener una lista de los números primos hasta cierto rango
+                    
+                    <button onclick="numerosPrimos();">Presióname</button>
+                    
+                    <h3>Respuesta:</h3>
+                    <table id = "Tabla"> </table>
+                    <p id = "respuesta"> </p>
+                    
+                    
+                </article>
+                
+            </section>
+            <section>
+               <h2> Preguntas a responder </h2>
+                <article>
+                    <h3 id ="1">
+                        ¿Qué diferencias y semejanzas hay entre Java y JavaScript?
+                    </h3>
+                    
+                    <p>
+                        JavaScript se integra directamente en las páginas HTML y es interpretado (sin estar compilado) por el cliente (navegador).[1]<br>
+                        JavaScript está basado en objetos, mientras que Java es un lenguaje de programación orientado a objetos (OOP). JavaScript no utiliza clases, herencias o técnicas habituales en la OOP.
+                    </p>
+                    
+                    <h3>¿Qué métodos tiene el objeto Date? (Menciona al menos 5*)</h3>
+                    
+                    <ul>
+                        <li>
+                            getDate();
+                            <ul>
+                                <li>
+                                    Regresa el día del mes (1-31)
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            getDay();
+                            <ul>
+                                <li>
+                                    Regresa el día de la semana (0-6)
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            getFullYear();
+                            <ul>
+                                <li>
+                                    Regresa el año
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            getHours();
+                            <ul>
+                                <li>
+                                    Regresa la hora (0-23)
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            getMinutes();
+                            <ul>
+                                <li>
+                                    Regresa los minutos (0-59)
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <h3>¿Qué métodos tienen los arreglos? (Menciona al menos 5*)</h3>
+                    
+                    <ul>
+                        <li>
+                            concat();
+                            <ul>
+                                <li>
+                                    Junta dos o más arreglos y devuelve una copia de los arreglos juntados
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            every();
+                            <ul>
+                                <li>
+                                    Revisa que todos los elementos de un arreglo pasen alguna prueba
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            fill();
+                            <ul>
+                                <li>
+                                    Llena todos los elementos de un arreglo con un vsalor estático
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            find();
+                            <ul>
+                                <li>
+                                    Regresa el primer valor del arreglo que pase alguna prueba
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            indexOf();
+                            <ul>
+                                <li>
+                                    Regresa el índice del valor buscado en un arreglo
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                    <h3>¿Cómo se declara una variable con alcance local dentro de una función?</h3>
+                    
+                    <p> 
+                        Falta
+                    </p>
+                    
+                    <h3>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h3>
+                    
+                    <p>
+                        Debes tener cuidado pues en JavaScript no es igual como en otros lenguajes, las variables que declares locales no pueden ser cambiadas dentro de una función. 
+                    </p>
+                    
+                    <h3>¿Qué método de String se puede utilizar para buscar patrones con expresiones regulares?¿Para qué podrías utilizar esto en una aplicación web?</h3>  
+                    
+                    <p>
+                        match() pero también search() <br> Puede utilizarse para buscar si ya existen correos iguales o si el nombre es el mismo. También puede usarse para pedirle al usuario una palabra y mostrarséla si está escrita en el documento.
+                    </p>
+                    
+                </article>
+            </section>
+            
+            <section>
+                <h2>Referencias</h2>
+                <strong> <a href="#1">[1]</a> </strong>
+                Juan Rodríguez. "URL." Internet:
+                <a href="https://www.gestiopolis.com/diferencias-java-javascript/">
+                    https://www.gestiopolis.com/diferencias-java-javascript/
+				</a>
+				, 17/03/2005 [Enero 22, 2018]. <br>
+                
+            </section>
+            
+        </main>        
+    </div>
+
+</body>
+
+</html>

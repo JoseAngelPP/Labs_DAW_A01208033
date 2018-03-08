@@ -86,4 +86,33 @@
         return $string_res;
     }
 
+    function agregarContacto($nombre, $apellido, $edad)
+    {
+        $db = connect();
+        if ($db != NULL) {
+            // insert command specification 
+            $query='INSERT INTO Contactos (nombre,apellido, edad) VALUES (?,?,?) ';
+            // Preparing the statement 
+            if (!($statement = $db->prepare($query))) {
+                die("Preparation failed: (" . $db->errno . ") " . $db->error);
+            }
+            // Binding statement params 
+            if (!$statement->bind_param("ssi", $nombre, $apellido, $edad)) {
+                die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+            }
+             // Executing the statement
+             if (!$statement->execute()) {
+                die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+              } 
+
+            
+            mysqli_free_result($results);
+            disconnect($db);
+            return true;
+        } 
+        return false;
+    }
+
+    
+
 ?>

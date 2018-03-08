@@ -7,6 +7,17 @@
 </head>
 
 <body>
+    <header>
+		  <h1 id = "header">Laboratorio 6 \----PASA EL MOUSE----------------------</h1>
+        <h1 id = "reloj"></h1>
+            <div id = "popup" style = "display: none"> 
+
+                <p>
+                    Hola, aun no acabo el Lab, pero lo hare :)
+                <p>
+
+            </div>
+    </header>
     <section>
         <form onsubmit="password(this);">
             Contraseña:<input type="password" placeholder="Ej. @ngel1898" name = "pass1" required/><br><br>
@@ -19,7 +30,7 @@
     
     <section>
         <form>
-            <table>
+            <table id = "tabla">
             <tr>
                 <td></td>
                 <td>Computadore</td>
@@ -62,11 +73,11 @@
                 <td class = "sub"> $0</td>
                 <td>+ 16% IVA</td>
                 <td id = "total">$0</td>
-            </tr>
-            
-            </table> 
+            </tr>    
+            </table>
         </form>
-        <input type="submit" value="Pagar" onclick="confirmarPago();">
+        <input id = "pagar" type="submit" value="Pagar" onclick="confirmarPago();">
+        <button id = "borrar">Borrar tabla</button>
     </section>
     <section>
         <h3>SACAR EL AREA DE UN RECTANGULO</h3>
@@ -80,6 +91,12 @@
 
         <p id = "resultado"></p>
     </section>
+    
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <img src="LAB6/1537.jpg" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+    </div>
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
     <section>
                 
@@ -109,13 +126,56 @@
                 </article>
                 
             </section>
+    
+    <section>
+                
+               <h2> Preguntas a responder </h2>
+                
+                <article>
+                    
+                    <h3 id ="1">
+                        ¿Cuáles son las diferencias entre los posibles valores de la propiedad position?
+                    </h3>
+                    
+                    <ul>
+                        <li>Static: Un elemento con este valor de posición está posicionado con el flujo normal de la página.</li>
+                        <li>Relative: Esta posición, como su nombre lo dice, hace que el elemento se fije relativo a su posición normal.</li>
+                        <li>Fixed: Con este valor el elemento se queda fija en un ligar sin importar que la página sea desplazada.</li>
+                        <li>Absolute: Este valor de posición deja al elemento posicionado relativo a su elemento padre.</li>
+                        <li>Sticky: Este valor sirve para hacer un elemento cambiar entre fixed y relative pues se queda fijo después de haber desplazado la página.</li>
+                    </ul>
+                    
+                    <h3>¿Cuáles son los valores estándar para la propiedad visibility?</h3>
+                    
+                    <ul>
+                        <li>Visible: El elemento está visible.</li>
+                        <li>Hidden: El elemento está escondido.</li>
+                        <li>Collapse: Sólo funciona con tablas, y quita una columna o fila pero no afecta el layout.</li>
+                        <li>Initial: Pone el valor default.</li>
+                        <li>Inherit: Hereda el valor de su elemento padre. </li>
+                    </ul>
+                    
+                    <h3>¿Qué es el zIndex y para qué sirve?</h3>
+                    
+                    <p>
+                        Esta propiedad te permite poner capas en tu html. Le da profundidad y te permite mover elementos atrás de otros o enfrente de otros. 
+                    </p>
+
+                </article>
+                
+            </section>
             
             <section>
                 
                 <h2>Referencias</h2>
                 
                 <a>Muñoz, I. (2017). Validación de formulario de datos. 25/01/2018, de MDN Sitio web:</a><a href=https://developer.mozilla.org/es/docs/Learn/HTML/Forms/Validacion_formulario_datos> https://developer.mozilla.org/es/docs/Learn/HTML/Forms/Validacion_formulario_datos
+				</a><br>
+                "URL." Internet:
+                <a href=https://www.w3schools.com/cssref>
+                    https://www.w3schools.com/cssref
 				</a>
+				, [Enero 29, 2018]. <br>
                 
             </section>
     
