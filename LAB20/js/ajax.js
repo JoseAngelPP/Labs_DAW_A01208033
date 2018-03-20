@@ -35,6 +35,7 @@ function sendRequest()
    }
 }
 
+
 function selectValue() {
 
    var list=document.getElementById("list");
@@ -46,7 +47,13 @@ function selectValue() {
 }
 
 $(document).ready(function(){
+    $("button").click(function(){
+        $("div").hide();
+    });
+});
+
+$(document).ready(function(){
     $("h4").click(function(){
-        $("div").animate({left: '250px'});
+        $("div").show();
     });
 });
